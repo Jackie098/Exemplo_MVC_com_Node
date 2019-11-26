@@ -1,0 +1,11 @@
+{
+  "name": "example_mvc_fullweb",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node": "^13.1.0",
+    "nodemon": "^2.0.1"
+  }
+}
