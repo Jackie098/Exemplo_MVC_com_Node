@@ -1,6 +1,14 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const port = 3000;
+
+app.set('view','view');
+
+app.use(express.json());     
+//Diz ao programa que retornarei JSON como resposta
+//SUpre a necessidade do BODYPARSER 
+//Baseado no body-parser
 
 var listCar = [
     carro1 = {
