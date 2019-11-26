@@ -3,7 +3,9 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-app.set('view','view');
+app.set('view','view');         //Setando a view
+app.set('view engine', 'ejs');      //Definindo a engine
+app.use(express.static('public'));      //Mudando a permissão para GLOBAL
 
 app.use(express.json());     
 //Diz ao programa que retornarei JSON como resposta
