@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const router = require('./router')
 const port = 3000;
 
 app.set('views','./view');         //Setando a view
@@ -12,38 +13,7 @@ app.use(express.urlencoded({extended:false}));
 //Diz ao programa que retornarei JSON como resposta
 //Supre a necessidade do BODYPARSER 
 
-
-var listCar = [
-    carro1 = {
-        cor: "Vermelho",
-        combus: "Gasolina"
-    },
-    carro2 = {
-        cor: "Roxo",
-        combus: "Alcool"
-    }
-];
-
-app.get('/', (req, res) => res.render('pages/home'));
-
-app.get('/carros', (req, res) => {
-    // listCar.map( todo => `<h2>${todo}</h2>`);
-
-    //return res.json(listCar);
-    res.send(JSON.stringify(listCar));
-});
-
-///carro/:cor/:combus
-app.post('/carro', (req, res) => {
-    let carro = {
-        cor: req.body.cor,
-        combus: req.body.combus
-    };
-    
-    listCar.push(carro);
-
-    return res.json(listCar);
-})
+app.use('/', router);   //Roteamento
 
 
 app.listen(port, () => console.log("Server running -> http://localhost:3000"));
