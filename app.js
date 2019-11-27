@@ -3,14 +3,15 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-app.set('view','view');         //Setando a view
+app.set('views','./view');         //Setando a view
 app.set('view engine', 'ejs');      //Definindo a engine
-app.use(express.static('public'));      //Mudando a permissão para GLOBAL
+app.use(express.static('./public'));      //Mudando a permissão para GLOBAL
 
-app.use(express.json());     
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));     
 //Diz ao programa que retornarei JSON como resposta
-//SUpre a necessidade do BODYPARSER 
-//Baseado no body-parser
+//Supre a necessidade do BODYPARSER 
+
 
 var listCar = [
     carro1 = {
@@ -23,7 +24,7 @@ var listCar = [
     }
 ];
 
-app.get('/', (req, res) => res.send('Hello World'));
+app.get('/', (req, res) => res.render('pages/home'));
 
 app.get('/carros', (req, res) => {
     // listCar.map( todo => `<h2>${todo}</h2>`);

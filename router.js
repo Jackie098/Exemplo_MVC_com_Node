@@ -5,4 +5,4 @@ const router = express.Router();
 router.get('/', (req, res) => res.render("Hello"));
 
 
-modules.exports = router;
+module.exports = router;
