@@ -16,15 +16,15 @@ exports.exibirCarros = (req, res) => {
 ///carro/:cor/:combus
 exports.inserirCarro = (req, res) => {
 
-   // render('/pages/insertCar');
+    render('/pages/insertCar');
 
     let carro = {   
-        cor: req.body.cor,
-        combus: req.body.combus
+        cor: req.body.txt_cor,
+        combus: req.body.txt_comb
     };
     
     listCar.push(carro);
    //console.log(listCar);
 
-    res.render(JSON.stringify(listCar));
+    res.send(JSON.stringify(listCar));
 };
