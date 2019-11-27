@@ -10,4 +10,6 @@ router.get('/carros', ctrlCar.exibirCarros);
 
 router.post('/carro', ctrlCar.inserirCarro);
 
+router.get('/carro', (req, res) => res.render('pages/insertCar'));
+
 module.exports = router;
