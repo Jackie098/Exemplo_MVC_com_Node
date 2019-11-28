@@ -1,5 +1,5 @@
 const Carro = require('../models/Carro');
-
+const car = new Carro('', '');
 // var listCar = [
 //     carro1 = {
 //         cor: "Vermelho",
@@ -20,10 +20,8 @@ exports.inserirCarro = (req, res) => {
     
     let cor =  req.body.txt_cor;
     let combus = req.body.txt_comb;
-
-    var car = Carro(cor, combus);
     
-    car.listCar.push(car);
+    car.addListCar(cor, combus);
 
     res.render('pages/insertCar');
 };
