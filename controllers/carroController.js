@@ -22,10 +22,10 @@ exports.inserirCarro = (req, res) => {
     };
     
     listCar.push(carro);
-    
+
     res.render('pages/insertCar');
 };
 
 exports.renderInsert = (req, res) => {
-    res.render('/pages/insertCar');
+    res.render('pages/insertCar');
 }
