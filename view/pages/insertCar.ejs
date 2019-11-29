@@ -8,20 +8,28 @@
 </head>
 <body>
     <form action="/carro" method="post">
-        <label for="txt_cor">
-            <p> 
-                Cor do carro: 
-                <input type="text" name="txt_cor" id="txt_cor">                
-            </p>
-        </label>
-        <label for="txt_comb">
-            <p>
-                Combustível: 
-                <input type="text" name="txt_comb" id="txt_comb">
-            </p>
-        </label>
-        <input type="submit" name="sub" id="sub">
-
+        <fieldset>
+            <legend>Dados do carro:</legend>
+            <label for="txt_modelo">
+                <p>
+                    Modelo:
+                    <input type="text" name="txt_modelo" id="txt_modelo">
+                </p>
+            </label>
+            <label for="txt_cor">
+                <p> 
+                    Cor: 
+                    <input type="text" name="txt_cor" id="txt_cor">                
+                </p>
+            </label>
+            <label for="txt_comb">
+                <p>
+                    Combustível: 
+                    <input type="text" name="txt_comb" id="txt_comb">
+                </p>
+            </label>
+            <input type="submit" name="sub" id="sub">
+        </fieldset>
     </form>
 </body>
 </html>
