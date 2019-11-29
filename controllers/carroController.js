@@ -11,11 +11,12 @@ exports.exibirCarros = (req, res) => {
 
 ///carro/:cor/:combus
 exports.inserirCarro = (req, res) => {
-    
+
+    let modelo = req.body.txt_modelo;
     let cor =  req.body.txt_cor;
     let combus = req.body.txt_comb;
     
-    car.addListCar(cor, combus);
+    car.addListCar(modelo, cor, combus);
     
     res.render('./pages/insertCar');
 };
