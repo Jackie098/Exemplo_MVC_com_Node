@@ -11,6 +11,10 @@ const car = new Carro('', '');
 //     }
 // ];
 
+exports.home = (req, res) => {
+    res.render('./pages/home');
+}
+
 exports.exibirCarros = (req, res) => {
     res.send(JSON.stringify(car.listCar));
 }
@@ -23,9 +27,9 @@ exports.inserirCarro = (req, res) => {
     
     car.addListCar(cor, combus);
 
-    res.render('pages/insertCar');
+    res.render('./pages/insertCar');
 };
 
 exports.renderInsert = (req, res) => {
-    res.render('pages/insertCar');
+    res.render('./pages/insertCar');
 }

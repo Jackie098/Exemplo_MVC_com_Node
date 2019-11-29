@@ -6,7 +6,8 @@ const port = 3000;
 
 app.set('views','./view');         //Setando a view
 app.set('view engine', 'ejs');      //Definindo a engine
-app.use(express.static('./public'));      //Mudando a permissão para GLOBAL
+
+app.use(express.static('public'));      //Mudando a permissão para GLOBAL
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));     
