@@ -1,15 +1,5 @@
 const Carro = require('../models/Carro');
 const car = new Carro('', '');
-// var listCar = [
-//     carro1 = {
-//         cor: "Vermelho",
-//         combus: "Gasolina"
-//     },
-//     carro2 = {
-//         cor: "Roxo",
-//         combus: "Alcool"
-//     }
-// ];
 
 exports.home = (req, res) => {
     res.render('./pages/home');
@@ -26,7 +16,7 @@ exports.inserirCarro = (req, res) => {
     let combus = req.body.txt_comb;
     
     car.addListCar(cor, combus);
-
+    
     res.render('./pages/insertCar');
 };
 

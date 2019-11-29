@@ -7,9 +7,9 @@ router.get('/carros', ctrlCar.exibirCarros);
 
 router.post('/carro', ctrlCar.inserirCarro);
 
-router.get('/carro', ctrlCar.renderInsert/*res.render('pages/insertCar')*/);
+router.get('/carro', ctrlCar.renderInsert);
 
 //HOME
-router.get('/', ctrlCar.home/*res.render('pages/home')*/);
+router.get('/', ctrlCar.home);
 
 module.exports = router;
