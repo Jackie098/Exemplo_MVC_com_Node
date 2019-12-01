@@ -4,15 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style>
+            div {
+                margin-left: 36.85%;
+                margin-top: 30px;
+                width: 360px;           
+            }
+    </style>
+
     <title>Show Records</title>
 </head>
 <body>
     <h1 style="vertical-align: center; text-align: center;">Confira o log do servidor</h1>
 
-    <div style="vertical-align: center; text-align: center; margin-top: 30px;"">
-        <a href="/"><button>Home</button></a>
-        <a href="/carro"><button>Adicionar carro</button></a>
-        <a href="/deleteCar"><button>Deletar carro</button></a>
+    <div class="btn-group">
+        <a href="/"><button class="btn btn-primary">Home</button></a>
+        <a href="/carro"><button class="btn btn-primary">Adicionar carro</button></a>
+        <a href="/deleteCar"><button class="btn btn-primary">Deletar carro</button></a>
     </div>
 </body>
 </html>
