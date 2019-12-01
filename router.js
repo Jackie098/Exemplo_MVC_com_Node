@@ -9,6 +9,10 @@ router.post('/carro', ctrlCar.inserirCarro);
 
 router.get('/carro', ctrlCar.renderInsert);
 
+router.post('/deleteCar', ctrlCar.deleteRecord);
+
+router.get('/deleteCar', ctrlCar.renderDelete);
+
 //HOME
 router.get('/', ctrlCar.home);
 
