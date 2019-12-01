@@ -1,13 +1,16 @@
 const mysql = require('mysql');
-const pool = mysql.pool({
+const pool = mysql.createPool({
     connectionLimit: 10,
-    host: root,
-    user: root,
+    host: 'localhost',
+    user: 'root',
     password: '1234',
-    database: 'carros_frota'
+    database: 'bd_carros',
+    port: 3306
 });
 
-pool.query('SELECT * FROM carros', (error, results, fields) => {
-    if(error)   throw error;
-    console.log('The solution is ', results[0])
-})
+module.exports = pool;
+
+// pool.query('SELECT * FROM carros', (error, results, fields) => {
+//     if(error)   throw error;
+//     console.log('The solution is ', results[0])
+// })
