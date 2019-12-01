@@ -9,7 +9,16 @@ exports.home = (req, res) => {
 }
 
 exports.exibirCarros = (req, res) => {
-    res.send(JSON.stringify(car.listCar));
+    let query = 'SELECT * FROM carros';
+    //let result = [];
+    pool.query(query, (err, rows) => {
+        if(err) console.log(err);
+
+        rows.map((todo) => console.log(todo));
+       // console.log(result);    
+    });
+    
+    res.render('pages/showCars');
 }
 
 ///carro/:cor/:combus
