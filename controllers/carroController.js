@@ -3,7 +3,6 @@ const pool = require('../connection');
 
 const car = new Carro();
 
-
 exports.home = (req, res) => {
     res.render('./pages/home');
 }
@@ -28,11 +27,7 @@ exports.inserirCarro = (req, res) => {
     car.addNewCar(placa, modelo, cor, combus)
         .then((result) => {
             console.log(result);
-            console.log(car.placa);
-            console.log(car.modelo);
-            console.log(car.cor);
-            console.log(car.combus);
-            res.render('pages/insertCar')
+            res.render('pages/insertCar');
             })
         .catch(err => {
             console.log(err);
@@ -45,17 +40,13 @@ exports.renderInsert = (req, res) => {
 
 exports.deleteRecord = (req, res) => {
     let placa = req.body.txt_placa.toUpperCase();
-    console.log(placa);
 
-    let query = `DELETE FROM carros WHERE placa = '${placa}'`;
-       
-    pool.query(query, (err) => {
-        if(err) console.log(err);
-
-        console.log(`Success -> Delete OK`);
-    });      
-    
-    res.render('pages/deleteCars');
+    car.removeCar(placa)
+        .then((result) => {
+            console.log(result);
+            res.render('pages/deleteCars');
+        })
+        .catch(err => console.log(err));    
 }
 
 exports.renderDelete = (req, res) => res.render('pages/deleteCars');

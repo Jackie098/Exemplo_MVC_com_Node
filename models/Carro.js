@@ -22,7 +22,16 @@ Carro.prototype.addNewCar = function(placa, modelo, cor, combus){
 }
 
 Carro.prototype.removeCar = function(placa){
-        
+    let query = `DELETE FROM carros WHERE placa = '${placa}'`;
+    
+    return new Promise((resolve, reject) => {
+        pool.query(query, (err) => {
+            if(err) 
+                reject(`Erro ao apagar carro ${err}`);
+    
+            resolve(`Success -> Delete OK`);
+        });      
+    });
 }
 
 Carro.prototype.viewCars = function(){
