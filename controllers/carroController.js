@@ -10,14 +10,11 @@ exports.home = (req, res) => {
 
 exports.exibirCarros = (req, res) => {
     let query = 'SELECT * FROM carros';
-    let vetor = [];
     
     pool.query(query, (err, rows) => {
-       if(err) console.log(err);
+       if(err) console.log(err);      
 
-       rows.map((todo) => vetor.push(todo));       
-
-       res.render('pages/showCars', {carros : vetor});  
+       res.render('pages/showCars', {carros : rows});  
     });   
 }
 
