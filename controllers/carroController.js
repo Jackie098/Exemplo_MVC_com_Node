@@ -25,22 +25,18 @@ exports.inserirCarro = (req, res) => {
     let cor =  req.body.txt_cor;
     let combus = req.body.txt_comb;
     
-    car.addNewCar(placa, modelo, cor, combus);
-    console.log(car.placa);
-    console.log(car.modelo)
-    console.log(car.cor)
-    console.log(car.combus)
-
-    let query = `INSERT INTO carros VALUES 
-            (default, '${car.placa}', '${car.modelo}', '${car.cor}', '${car.combus}')`;
-    
-    pool.query(query, (err) => {
-        if(err) console.log(err);
-
-        console.log(`Succes -> Insertion OK`);
-    });
-    
-    res.render('pages/insertCar');
+    car.addNewCar(placa, modelo, cor, combus)
+        .then((result) => {
+            console.log(result);
+            console.log(car.placa);
+            console.log(car.modelo);
+            console.log(car.cor);
+            console.log(car.combus);
+            res.render('pages/insertCar')
+            })
+        .catch(err => {
+            console.log(err);
+        });
 };
 
 exports.renderInsert = (req, res) => {
