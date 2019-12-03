@@ -8,13 +8,13 @@ exports.home = (req, res) => {
 }
 
 exports.exibirCarros = (req, res) => {
-    let query = 'SELECT * FROM carros';
-    
-    pool.query(query, (err, rows) => {
-       if(err) console.log(err);      
-
-       res.render('pages/showCars', {carros : rows});  
-    });   
+    car.viewCars()
+        .then(result => {
+            res.render('pages/showCars', {carros : result});
+        })
+        .catch(err => {
+            console.log(err);
+        });
 }
 
 ///carro/:cor/:combus

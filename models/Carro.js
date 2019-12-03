@@ -35,7 +35,15 @@ Carro.prototype.removeCar = function(placa){
 }
 
 Carro.prototype.viewCars = function(){
-        
+    let query = 'SELECT * FROM carros';
+    
+    return new Promise((resolve, reject) => {
+        pool.query(query, (err, rows) => {
+            if(err) reject(err);      
+     
+            resolve(rows);  
+         });
+    });    
 }
 
 module.exports = Carro;
