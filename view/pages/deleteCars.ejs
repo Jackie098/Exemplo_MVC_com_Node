@@ -11,33 +11,25 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <style>
-            div {
+            .btn-group {
                 margin-left: 36.85%;
                 margin-top: 30px;
                 width: 360px;           
+            }
+
+            label {
+                margin-left: 20px;
             }
     </style>
 </head>
 <body>
     <form action="/deleteCar" method="post">
         <fieldset>
-            <legend>Dados do carro para deletar:</legend>
+            <legend>Informe a placa do carro para deletar:</legend>
             <label for="txt_modelo">
                 <p>
-                    Modelo:
-                    <input type="text" name="txt_modelo" id="txt_modelo">
-                </p>
-            </label>
-            <label for="txt_cor">
-                <p> 
-                    Cor: 
-                    <input type="text" name="txt_cor" id="txt_cor">                
-                </p>
-            </label>
-            <label for="txt_comb">
-                <p>
-                    Combustível: 
-                    <input type="text" name="txt_comb" id="txt_comb">
+                    Placa:
+                    <input type="text" name="txt_placa" id="txt_placa">
                 </p>
             </label>
             <input type="submit" name="sub" id="sub">

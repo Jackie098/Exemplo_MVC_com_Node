@@ -1,11 +1,12 @@
-let Carro = function (modelo, cor, combus) {
+let Carro = function (placa, modelo, cor, combus) {
+        this.placa = placa;
         this.modelo = modelo;
         this.cor = cor;
         this.combus = combus;
     } 
 
-Carro.prototype.addNewCar = function(modelo, cor, combus){
-       
+Carro.prototype.addNewCar = function(placa, modelo, cor, combus){
+        this.placa = placa;
         this.modelo = modelo;
         this.cor = cor;
         this.combus = combus;

@@ -38,12 +38,14 @@
 <body>   
     <table class="table table-hover">
         <tr>
+            <th>Placa</th>
             <th>Modelo</th>
             <th>Cor</th>
             <th>Combustível</th>
         </tr>
         <% carros.map(todo => { %>
         <tr>
+            <td><%=todo.placa%></td>
             <td><%=todo.modelo%></td>
             <td><%=todo.cor%></td>
             <td><%=todo.combustivel%></td>           

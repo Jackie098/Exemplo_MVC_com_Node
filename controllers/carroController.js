@@ -1,7 +1,7 @@
 const Carro = require('../models/Carro');
 const pool = require('../connection');
 
-const car = new Carro('', '');
+const car = new Carro();
 
 
 exports.home = (req, res) => {
@@ -23,18 +23,19 @@ exports.exibirCarros = (req, res) => {
 
 ///carro/:cor/:combus
 exports.inserirCarro = (req, res) => {
-
+    let placa = req.body.txt_placa.toUpperCase();
     let modelo = req.body.txt_modelo;
     let cor =  req.body.txt_cor;
     let combus = req.body.txt_comb;
     
-    car.addNewCar(modelo, cor, combus);
+    car.addNewCar(placa, modelo, cor, combus);
+    console.log(car.placa);
     console.log(car.modelo)
     console.log(car.cor)
     console.log(car.combus)
 
     let query = `INSERT INTO carros VALUES 
-            (default, '${car.modelo}','${car.cor}', '${car.combus}')`;
+            (default, '${car.placa}', '${car.modelo}', '${car.cor}', '${car.combus}')`;
     
     pool.query(query, (err) => {
         if(err) console.log(err);
@@ -50,18 +51,11 @@ exports.renderInsert = (req, res) => {
 }
 
 exports.deleteRecord = (req, res) => {
-    let modelo = req.body.txt_modelo;
-    let cor = req.body.txt_cor;
-    let combus = req.body.txt_comb;
+    let placa = req.body.txt_placa.toUpperCase();
+    console.log(placa);
 
-    car.addNewCar(modelo, cor, combus);
-    console.log(car.modelo)
-    console.log(car.cor)
-    console.log(car.combus)
-
-    let query = `DELETE FROM carros WHERE modelo = '${car.modelo}' AND 
-            cor = '${car.cor}' AND combustivel = '${car.combus}' `;
-    
+    let query = `DELETE FROM carros WHERE placa = '${placa}'`;
+       
     pool.query(query, (err) => {
         if(err) console.log(err);
 
