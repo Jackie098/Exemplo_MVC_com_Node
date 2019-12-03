@@ -40,15 +40,15 @@
         <tr>
             <th>Modelo</th>
             <th>Cor</th>
-            <th style="padding-left: 0px;">Combustível</th>
+            <th>Combustível</th>
         </tr>
         <% carros.map(todo => { %>
         <tr>
-            <td><%=todo.modelo %></th>
-            <td><%=todo.cor %><th>
-            <td><%=todo.combustivel%><th>           
+            <td><%=todo.modelo%></td>
+            <td><%=todo.cor%></td>
+            <td><%=todo.combustivel%></td>           
         </tr>
-        <%});%>
+        <% });%>
     </table>
 
     <div class="btn-group">

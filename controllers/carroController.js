@@ -10,20 +10,15 @@ exports.home = (req, res) => {
 
 exports.exibirCarros = (req, res) => {
     let query = 'SELECT * FROM carros';
-    var vetor = [];
+    let vetor = [];
     
     pool.query(query, (err, rows) => {
        if(err) console.log(err);
 
-      // vetor.push(JSON.stringify(rows));
-       rows.map((todo) => vetor.push(todo));
-       console.log(vetor);       
-       //return vetor; 
-       res.render('pages/showCars',{carros : vetor});  
-    });
-    //console.log(vetor);
-    
-    
+       rows.map((todo) => vetor.push(todo));       
+
+       res.render('pages/showCars', {carros : vetor});  
+    });   
 }
 
 ///carro/:cor/:combus
