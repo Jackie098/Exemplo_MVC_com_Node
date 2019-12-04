@@ -1,5 +1,4 @@
 const Carro = require('../models/Carro');
-const pool = require('../connection');
 
 const car = new Carro();
 
