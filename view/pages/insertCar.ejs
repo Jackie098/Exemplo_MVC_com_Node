@@ -1,21 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include ('../partials/head'); %>
     
     <title>Add carro</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
     <style>
-            div {
-                margin-left: 36.85%;
-                margin-top: 30px;
-                width: 360px;           
-            }
             label {
                 margin-left: 30px;
             }
@@ -26,6 +16,9 @@
     </style>
 </head>
 <body>
+
+    <%- include ('../partials/header');%>
+
     <form action="/carro" method="post">
         <fieldset>
             <legend>Dados do carro para add:</legend>
@@ -59,8 +52,11 @@
     
     <div class="btn-group">
         <a href="/carros" class="btn btn-info btn-md">Exibir carros</a>
+        <a href="/atualizarCarro" class="btn btn-info btn-md">Atualizar carro</a>
         <a href="/deleteCar" class="btn btn-info btn-md">Deletar carro</a>
         <a href="/" class="btn btn-info btn-md">Home</a>
     </div>
+
+    <%- include ('../partials/footer'); %>
 </body>
 </html>
