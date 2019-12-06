@@ -1,24 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%- include ('../partials/head'); %>
     <title>Home</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-    <style>
-        div {
-            margin-left: 36.85%;
-            margin-top: 30px;
-            width: 360px;           
-        }
-    </style>
 </head>
 <body>
+    <%- include ('../partials/header');%>
     <h1 style="vertical-align: center; text-align: center;">Hello my friends!!!</h1>
 
     <div class="btn-group">
@@ -27,6 +14,9 @@
         <a href="/deleteCar" class="btn btn-info btn-md">Deletar carro</a>
          <a href="/atualizarCarro" class="btn btn-info btn-md">Atualizar carro</a>
     </div>
+
+    <!--FOOTER-->
+    <%- include ('../partials/footer'); %>
 
 </body>
 </html>
