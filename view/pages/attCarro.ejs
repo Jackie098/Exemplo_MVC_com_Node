@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Atualizar carro</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style>
+            div {
+                margin-left: 36.85%;
+                margin-top: 30px;
+                width: 360px;           
+            }
+            label {
+                margin-left: 30px;
+            }
+            
+            #sub {
+                margin-left: 120px;
+            }
+    </style>
+</head>
+<body>
+    <form action="/atualizarCarro" method="post">
+        <fieldset>
+            <legend>Buscar veículo pela placa</legend>
+            <label for="txt_placa">
+                <p>
+                    Placa:
+                    <input type="text" name="txt_delPlaca" id="txt_delPlaca">
+                </p>
+            </label><br>
+        </fieldset>
+        <fieldset>
+            <legend>Dados do carro para atualizar:</legend>
+            <label for="txt_placa">
+                <p>
+                    Placa:
+                    <input type="text" name="txt_placa" id="txt_placa">
+                </p>
+            </label><br>
+            <label for="txt_modelo">
+                <p>
+                    Modelo:
+                    <input type="text" name="txt_modelo" id="txt_modelo">
+                </p>
+            </label><br>
+            <label for="txt_cor">
+                <p> 
+                    Cor: 
+                    <input type="text" name="txt_cor" id="txt_cor">                
+                </p>
+            </label><br>
+            <label for="txt_comb">
+                <p>
+                    Combustível: 
+                    <input type="text" name="txt_comb" id="txt_comb">
+                </p>
+            </label><br>
+            <input type="submit" name="sub" id="sub">
+        </fieldset>
+    </form>
+    
+    <div class="btn-group">
+        <a href="/carros" class="btn btn-info btn-md">Exibir carros</a>
+        <a href="/deleteCar" class="btn btn-info btn-md">Deletar carro</a>
+        <a href="/" class="btn btn-info btn-md">Home</a>
+    </div>
+</body>
+</html>

@@ -13,6 +13,10 @@ router.post('/deleteCar', ctrlCar.deleteRecord);
 
 router.get('/deleteCar', ctrlCar.renderDelete);
 
+router.get('/atualizarCarro', ctrlCar.renderUpdate);
+
+router.post('/atualizarCarro', ctrlCar.atualizarCarro);
+
 //HOME
 router.get('/', ctrlCar.home);
 

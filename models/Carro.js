@@ -46,4 +46,19 @@ Carro.prototype.viewCars = function(){
     });    
 }
 
+Carro.prototype.atualizarCarro = function(delPlaca, placa, modelo, cor, combustivel){
+
+    let query = `UPDATE carros SET placa = '${placa}', modelo = '${modelo}', 
+                cor = '${cor}', combustivel = '${combustivel}' WHERE placa = '${delPlaca}'`;
+    
+    return new Promise((resolve, reject) => {
+        pool.query(query, (err) => {    
+            if(err)
+               reject(`Erro ao atualizar carro: ${err}`);
+            else
+               resolve(`Atualizacao OK`);
+        });
+    });
+}
+
 module.exports = Carro;

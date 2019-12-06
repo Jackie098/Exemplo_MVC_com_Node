@@ -27,6 +27,7 @@ exports.inserirCarro = (req, res) => {
         .then((result) => {
             console.log(result);
             res.render('pages/insertCar');
+           
             })
         .catch(err => {
             console.log(err);
@@ -49,3 +50,22 @@ exports.deleteRecord = (req, res) => {
 }
 
 exports.renderDelete = (req, res) => res.render('pages/deleteCars');
+
+exports.atualizarCarro = (req, res)=>{
+    let delPlaca = req.body.txt_delPlaca.toUpperCase();
+    let placa = req.body.txt_placa.toUpperCase();
+    let modelo = req.body.txt_modelo;
+    let cor =  req.body.txt_cor;
+    let combus = req.body.txt_comb;
+
+    car.atualizarCarro(delPlaca, placa, modelo,cor, combus)
+        .then((result) => {
+            console.log(result);
+            res.render('pages/attCarro');
+        }).catch(err => console.log(err));
+}
+
+exports.renderUpdate = (req, res) =>{
+    res.render('./pages/attCarro');
+}
+
