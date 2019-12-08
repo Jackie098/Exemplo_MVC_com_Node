@@ -5,4 +5,4 @@ Representação simples com o padrão Model-View-Controller em NodeJS e controle
 Foi utilizado:
 	-> '.ejs' Como motor de renderização das páginas html
 	-> Express
-	-> Conexão com o banco MySQL
+	-> Conexão com o banco de dados relacional MySQL
