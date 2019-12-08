@@ -11,8 +11,18 @@
         </div>
 
         <ul class= "nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/">Sobre</a></li>
+            <li><a class= "active" href="/">Home</a></li>
+            <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Gerenciar
+            <span class="caret"></span></a>
+            
+            <ul class=" navbar-inverse dropdown-menu" id="trocar_cor">
+                <li><a  href="/carro">Adicionar</a></li>
+                <li><a  href="/carros">Exibir</a></li>
+                <li><a  href="/atualizarCarro">Atualizar</a></li>
+                <li><a  href="/deleteCar">Deletar</a></li>
+            </ul>
+
+            </li>
         </ul>
 
     </div>
